@@ -1,0 +1,10 @@
+---
+cisco-nxos:
+  username: admin
+  password: admin
+  platform: 'nxos'
+
+cisco_group:
+  platform: 'ios'
+  username: cisco
+  password: cisco

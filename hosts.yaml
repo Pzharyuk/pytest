@@ -1,0 +1,41 @@
+---
+
+RT1:
+    hostname: 172.16.2.100
+    groups:
+        - cisco_group
+    data:
+        role: "router_pe"
+RT2:
+    hostname: 172.16.2.101
+    groups:
+        - cisco_group
+    data:
+        role: "router_pe"
+RT3:
+    hostname: 172.16.2.102
+    groups:
+        - cisco_group
+    data:
+        role: "router_ce"
+
+RT4:
+    hostname: 172.16.2.103
+    groups:
+        - cisco_group
+    data:
+        role: "router_ce"
+
+# SW1:
+#     hostname: 172.16.2.105
+#     groups:
+#         - cisco-access
+#   
+#         layer: access-switch
+
+# SW2:
+#     hostname: 172.16.2.106
+#     groups:
+#         - cisco-access
+#   
+#         layer: access-switch
