@@ -8,3 +8,8 @@ cisco_group:
   platform: 'ios'
   username: cisco
   password: cisco
+
+access_switch:
+  platform: 'ios'
+  username: cisco
+  password: cisco

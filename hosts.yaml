@@ -26,16 +26,21 @@ RT4:
     data:
         role: "router_ce"
 
-# SW1:
-#     hostname: 172.16.2.105
-#     groups:
-#         - cisco-access
-#   
-#         layer: access-switch
-
-# SW2:
-#     hostname: 172.16.2.106
-#     groups:
-#         - cisco-access
-#   
-#         layer: access-switch
+SW1:
+    hostname: 172.16.2.104
+    groups:
+        - cisco_group
+    data:
+        role: "access_switch"
+SW2:
+    hostname: 172.16.2.105
+    groups:
+        - cisco_group
+    data:
+        role: "access_switch"
+SW3:
+    hostname: 172.16.2.106
+    groups:
+        - cisco_group
+    data:
+        role: "access_switch"
