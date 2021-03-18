@@ -1,11 +1,16 @@
-from nornir import InitNornir
 from nornir_scrapli.tasks import send_command
 from nornir_utils.plugins.functions import print_result
 from nornir.core.filter import F
+from nornir_utils.plugins.tasks.data import load_yaml
+from pytest_check import check_func
 
-nr = InitNornir(config_file="config.yaml")
-group = nr.filter(F(role="access_switch"))
 
+def load_vars(task):
+    result = task.run(task=load_yaml, file=f"desired-state/vlans/{task.host}.yaml")
+    loaded_var = result.result
+    return loaded_var
+
+@check_func
 def get_vlans(task):
     vlan_list = []
     result = task.run(task=send_command, command="show vlan")
@@ -18,6 +23,13 @@ def get_vlans(task):
         name = vlans[vlan]['name']
         vlan_dict = {"id": vlan_id, "name": name}
         vlan_list.append(vlan_dict)
-        print(vlan_list)
+    expected = load_vars(task)['vlans']
+    assert expected == vlan_list, f"{task.host} FAILED"
 
-group.run(task=get_vlans)
+def test_nornir(nr):
+    # group = nr.filter(F(groups="access_switch"))
+    nr.run(task=get_vlans)
+
+# group.run(task=get_vlans)
+
+

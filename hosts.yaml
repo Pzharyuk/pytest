@@ -5,42 +5,42 @@ RT1:
     groups:
         - cisco_group
     data:
-        role: "router_pe"
+        role: router_pe
 RT2:
     hostname: 172.16.2.101
     groups:
         - cisco_group
     data:
-        role: "router_pe"
+        role: router_pe
 RT3:
     hostname: 172.16.2.102
     groups:
         - cisco_group
     data:
-        role: "router_ce"
+        role: router_ce
 
 RT4:
     hostname: 172.16.2.103
     groups:
         - cisco_group
     data:
-        role: "router_ce"
+        role: router_ce
 
 SW1:
     hostname: 172.16.2.104
     groups:
         - cisco_group
     data:
-        role: "access_switch"
+        role: access_switch
 SW2:
     hostname: 172.16.2.105
     groups:
         - cisco_group
     data:
-        role: "access_switch"
+        role: access_switch
 SW3:
     hostname: 172.16.2.106
     groups:
         - cisco_group
     data:
-        role: "access_switch"
+        role: access_switch
